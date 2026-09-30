@@ -115,6 +115,9 @@ footer a{color:var(--gold)}
 /* gallery */
 .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
 @media(min-width:760px){.gallery{grid-template-columns:repeat(4,1fr)}}
+@media(min-width:1000px){.gallery{grid-template-columns:repeat(5,1fr)}}
+.gal-label{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:600;margin:0 0 12px}
+.gal-label:not(:first-of-type){margin-top:30px}
 .gallery figure{margin:0;border-radius:14px;overflow:hidden;border:1px solid var(--line);position:relative;background:var(--card);aspect-ratio:3/4}
 .gallery img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
 .gallery figure:hover img{transform:scale(1.04)}
@@ -190,6 +193,15 @@ footer a{color:var(--gold)}
 <section id="work">
   <div class="wrap">
     <div class="head"><span class="eyebrow">Our work</span><h2>From fades to fashion colour.</h2><p>Sharp men's cuts, silver bobs, soft layers, bold twists — a taste of what walks out of our chairs.</p></div>
+    <p class="gal-label">Men's cuts &amp; fades</p>
+    <div class="gallery">
+      <figure><img src="assets/mens-hard-part.png" alt="Skin fade with a sharp hard part and slicked-back top" loading="lazy" width="298" height="464"><figcaption>Hard part &amp; skin fade</figcaption></figure>
+      <figure><img src="assets/mens-textured-fade.png" alt="Textured fringe with a low fade and razor line" loading="lazy" width="260" height="409"><figcaption>Textured fringe</figcaption></figure>
+      <figure><img src="assets/mens-pompadour-fade.png" alt="Swept-back top over a high skin fade" loading="lazy" width="212" height="399"><figcaption>Swept top, high fade</figcaption></figure>
+      <figure><img src="assets/mens-twists-fade.png" alt="Twists on top with a smooth taper fade" loading="lazy" width="277" height="409"><figcaption>Twists &amp; taper</figcaption></figure>
+      <figure><img src="assets/mens-pink-colour.png" alt="Bold pink-to-blonde fashion colour with a long fringe" loading="lazy" width="365" height="463"><figcaption>Fashion colour</figcaption></figure>
+    </div>
+    <p class="gal-label">Colour &amp; styling</p>
     <div class="gallery">
       <figure><img src="assets/silver-bob.png" alt="Silver-grey stacked bob with lavender tips" loading="lazy" width="367" height="362"><figcaption>Silver bob</figcaption></figure>
       <figure><img src="assets/layered-highlights.png" alt="Long layered cut with soft caramel highlights and curtain fringe" loading="lazy" width="365" height="459"><figcaption>Layers &amp; highlights</figcaption></figure>
