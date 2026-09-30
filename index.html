@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#0e0d0b">
+<meta property="og:title" content="Shiny Barbershop · Downtown Vancouver">
+<meta property="og:description" content="Precision cuts, colour and grooming at 678 Dunsmuir St. Rated 4.8 on Google.">
+<meta property="og:image" content="assets/barber-at-work.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HairSalon","name":"Shiny Barbershop","telephone":"+1-604-616-5859","address":{"@type":"PostalAddress","streetAddress":"678 Dunsmuir St","addressLocality":"Vancouver","addressRegion":"BC","postalCode":"V7Y 1K8","addressCountry":"CA"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"985"}}</script>
 <title>Shiny Barbershop · Downtown Vancouver · 678 Dunsmuir St</title>
 <meta name="description" content="Shiny Barbershop — rated 4.8 on Google from 985 reviews. 678 Dunsmuir St, Downtown Vancouver. Call 604-616-5859.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -81,50 +85,144 @@ footer a{color:var(--gold)}
 .sticky a{flex:1;min-height:52px;font-size:15.5px;backdrop-filter:blur(10px)}
 .sticky .btn-dir{background:rgba(14,13,11,.8)}
 @media(min-width:860px){.sticky{display:none}footer{padding-bottom:44px}.cta{grid-template-columns:1fr 1fr;max-width:560px}}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(14,13,11,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+.nav .name{font:700 19px Fraunces,serif;text-decoration:none}
+.nav ul{display:none;list-style:none;gap:26px;font-size:14.5px;color:var(--muted)}
+.nav ul a{text-decoration:none}.nav ul a:hover{color:var(--gold2)}
+.nav .btn{min-height:38px;padding:0 16px;font-size:14.5px;border-radius:10px}
+@media(min-width:760px){.nav ul{display:flex}}
+/* hero split */
+.hero .wrap{display:grid;gap:36px;align-items:end}
+.hero-photo{display:none;margin:0;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 60px -30px #000;aspect-ratio:3/4;max-height:560px}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block}
+@media(min-width:860px){.hero .wrap{grid-template-columns:1.35fr .65fr}.hero-photo{display:block}}
+.hero-cred{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:22px;color:var(--muted);font-size:14px;list-style:none}
+.hero-cred li:before{content:"\2713";color:var(--gold);margin-right:7px;font-weight:700}
+/* highlights */
+.hl{padding:34px 0;background:var(--ink2)}
+.hl .grid{gap:22px}
+@media(min-width:760px){.hl .grid{grid-template-columns:repeat(4,1fr)}}
+.hl b{display:block;font:700 20px Fraunces,serif;color:var(--gold2);margin-bottom:2px}
+.hl span{color:var(--muted);font-size:14.5px}
+/* team */
+.person .role{color:var(--gold);font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;margin-bottom:8px}
+.person h3{font-size:26px;margin-bottom:8px}
+.person p{color:var(--muted);font-size:15px}
+.avatar{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;margin-bottom:16px;font:700 22px Fraunces,serif;color:#1a1408;background:linear-gradient(140deg,var(--gold2),var(--gold))}
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media(min-width:760px){.gallery{grid-template-columns:repeat(4,1fr)}}
+@media(min-width:1000px){.gallery{grid-template-columns:repeat(5,1fr)}}
+.gal-label{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:600;margin:0 0 12px}
+.gal-label:not(:first-of-type){margin-top:30px}
+.gallery figure{margin:0;border-radius:14px;overflow:hidden;border:1px solid var(--line);position:relative;background:var(--card);aspect-ratio:3/4}
+.gallery img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.gallery figure:hover img{transform:scale(1.04)}
+.gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 12px 10px;font-size:12.5px;letter-spacing:.06em;color:var(--cream);background:linear-gradient(transparent,rgba(0,0,0,.75))}
+/* review extras */
+.rev.feature{grid-column:1/-1}
+@media(min-width:760px){.rev.feature{grid-column:span 2}}
+.rev.feature blockquote{font-size:22px}
+.quiet{color:var(--muted);font-size:14px;margin-top:20px}
+.quiet a{color:var(--gold)}
 </style>
 </head>
 <body>
 <div class="preview">Preview made for <b>Shiny Barbershop</b> by Marketing Enigma</div>
 
-<header class="hero">
+<nav class="nav" aria-label="Main"><div class="wrap">
+  <a class="name" href="#top">Shiny</a>
+  <ul><li><a href="#services">Services</a></li><li><a href="#team">Team</a></li><li><a href="#work">Our work</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#location">Visit</a></li></ul>
+  <a class="btn btn-call" href="tel:6046165859">Call</a>
+</div></nav>
+<header class="hero" id="top">
   <div class="pole" aria-hidden="true"></div>
   <div class="wrap">
+   <div>
     <div class="logo" aria-hidden="true">
       <svg viewBox="0 0 40 40" fill="none" stroke="#d4af6a" stroke-width="1.6"><circle cx="11" cy="29" r="5"/><circle cx="29" cy="29" r="5"/><path d="M14.5 25.5 31 6M25.5 25.5 9 6"/></svg>
       <span class="eyebrow">Downtown Vancouver</span>
     </div>
     <h1>Shiny<br><em>Barbershop</em></h1>
-    <p class="lede">Cuts, colour and grooming at 678 Dunsmuir St — right in the heart of downtown.</p>
+    <p class="lede">Precision cuts, colour and grooming for men and women — at 678 Dunsmuir St, right in the heart of downtown Vancouver.</p>
     <div class="rating"><span class="stars" aria-hidden="true">★★★★★</span><span><strong>4.8</strong> on Google · 985 reviews</span></div>
     <div class="cta">
       <a class="btn btn-call" href="tel:6046165859"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Call 604-616-5859</a>
       <a class="btn btn-dir" href="https://www.google.com/maps/search/?api=1&amp;query=Shiny%20Barbershop%2C%20678%20Dunsmuir%20St%2C%20Vancouver%2C%20BC&amp;query_place_id=ChIJ14FMAoFxhlQRZEQUZlg1-1o" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Get Directions</a>
     </div>
+    <ul class="hero-cred"><li>Skilled, friendly team</li><li>Fair prices</li><li>Steps from the SkyTrain</li></ul>
+   </div>
+   <figure class="hero-photo"><img src="assets/barber-at-work.png" alt="A barber fading a client's hair in a gold-trimmed barber chair" width="363" height="612" fetchpriority="high"></figure>
   </div>
 </header>
+
+<div class="hl"><div class="wrap grid">
+  <div><b>4.8 ★</b><span>985 Google reviews</span></div>
+  <div><b>Cut · Colour · Wax</b><span>One stop for all of it</span></div>
+  <div><b>Never rushed</b><span>Clients say we take our time</span></div>
+  <div><b>By the SkyTrain</b><span>Easy to reach downtown</span></div>
+</div></div>
 
 <main>
 <section id="services">
   <div class="wrap">
-    <div class="head"><span class="eyebrow">Services</span><h2>Sharp, start to finish.</h2><p>What clients come to Shiny for, in their own words.</p></div>
+    <div class="head"><span class="eyebrow">Services</span><h2>Sharp, start to finish.</h2><p>Barbering, colour and grooming under one roof — for him, her and the kids.</p></div>
     <div class="grid three">
-      <div class="card svc"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/><path d="M8.2 15.8 20 3M15.8 15.8 4 3"/></svg></div><h3>Haircuts</h3><p>Precise cuts for men, women and kids, with honest advice on what suits you.</p></div>
-      <div class="card svc"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg></div><h3>Colour &amp; Highlights</h3><p>Colour, highlights and cut-and-colour appointments.</p></div>
-      <div class="card svc"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20c4-1 6-4 8-8s4-7 8-8M4 14c2 0 4-1 5-3"/></svg></div><h3>Waxing &amp; Grooming</h3><p>Waxing and all-round grooming — an all-in-one stop.</p></div>
+      <div class="card svc"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/><path d="M8.2 15.8 20 3M15.8 15.8 4 3"/></svg></div><h3>Haircuts</h3><p>Fades, crops, bobs, layers and more — cut with precision, plus honest advice on what suits your face shape.</p></div>
+      <div class="card svc"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg></div><h3>Colour &amp; Highlights</h3><p>Highlights, balayage-style colour, bold fashion shades and cut-and-colour appointments.</p></div>
+      <div class="card svc"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20c4-1 6-4 8-8s4-7 8-8M4 14c2 0 4-1 5-3"/></svg></div><h3>Waxing &amp; Grooming</h3><p>Back, chest and face waxing, plus all-round grooming — book the whole household in together.</p></div>
     </div>
     <p class="note">Call for current services, pricing and availability.</p>
+  </div>
+</section>
+
+<section id="team">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">The team</span><h2>Faces you'll come back for.</h2><p>Clients ask for their barber by name — and keep asking.</p></div>
+    <div class="grid three">
+      <div class="card person"><div class="avatar" aria-hidden="true">T</div><div class="role">Cut &amp; colour</div><h3>Tommy</h3><p>Exceptional with colour and highlights. Tells you what works for your face shape, never rushes, and looks after his regulars like family.</p></div>
+      <div class="card person"><div class="avatar" aria-hidden="true">L</div><div class="role">Barbering</div><h3>Luciano</h3><p>Known for exceptional craftsmanship and an eye for detail — precise haircuts that beat expectations.</p></div>
+      <div class="card person"><div class="avatar" aria-hidden="true">N</div><div class="role">Styling</div><h3>Nina</h3><p>Professional, skilled and easy to talk to — a favourite for personal, thoughtful styling.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">Our work</span><h2>From fades to fashion colour.</h2><p>Sharp men's cuts, silver bobs, soft layers, bold twists — a taste of what walks out of our chairs.</p></div>
+    <p class="gal-label">Men's cuts &amp; fades</p>
+    <div class="gallery">
+      <figure><img src="assets/mens-hard-part.png" alt="Skin fade with a sharp hard part and slicked-back top" loading="lazy" width="298" height="464"><figcaption>Hard part &amp; skin fade</figcaption></figure>
+      <figure><img src="assets/mens-textured-fade.png" alt="Textured fringe with a low fade and razor line" loading="lazy" width="260" height="409"><figcaption>Textured fringe</figcaption></figure>
+      <figure><img src="assets/mens-pompadour-fade.png" alt="Swept-back top over a high skin fade" loading="lazy" width="212" height="399"><figcaption>Swept top, high fade</figcaption></figure>
+      <figure><img src="assets/mens-twists-fade.png" alt="Twists on top with a smooth taper fade" loading="lazy" width="277" height="409"><figcaption>Twists &amp; taper</figcaption></figure>
+      <figure><img src="assets/mens-pink-colour.png" alt="Bold pink-to-blonde fashion colour with a long fringe" loading="lazy" width="365" height="463"><figcaption>Fashion colour</figcaption></figure>
+    </div>
+    <p class="gal-label">Colour &amp; styling</p>
+    <div class="gallery">
+      <figure><img src="assets/silver-bob.png" alt="Silver-grey stacked bob with lavender tips" loading="lazy" width="367" height="362"><figcaption>Silver bob</figcaption></figure>
+      <figure><img src="assets/layered-highlights.png" alt="Long layered cut with soft caramel highlights and curtain fringe" loading="lazy" width="365" height="459"><figcaption>Layers &amp; highlights</figcaption></figure>
+      <figure><img src="assets/blue-twists.png" alt="Electric blue twists styled up over a tapered fade" loading="lazy" width="366" height="453"><figcaption>Colour twists &amp; fade</figcaption></figure>
+      <figure><img src="assets/blonde-crop.png" alt="Short layered crop with blonde and ash highlights" loading="lazy" width="367" height="365"><figcaption>Blonde crop</figcaption></figure>
+    </div>
+    <p class="note">Sample styles shown for this preview.</p>
   </div>
 </section>
 
 <section id="reviews">
   <div class="wrap">
     <div class="head"><span class="eyebrow">Reviews</span><h2>Downtown's go-to chair.</h2></div>
-    <div class="big"><span class="n">4.8</span><div><span class="stars">★★★★★</span><br><small>985 reviews on Google</small></div></div>
+    <div class="big"><span class="n">4.8</span><div><span class="stars" aria-hidden="true">★★★★★</span><br><small>985 reviews on Google</small></div></div>
     <div class="grid three">
-      <figure class="card rev"><span class="stars">★★★★★</span><blockquote>“Elias is the best. The best barber in downtown.”</blockquote><cite>5-star client review</cite></figure>
-      <figure class="card rev"><span class="stars">★★★★★</span><blockquote>“A clean and convenient place to get your hair trimmed, coloured or cut. The staff is friendly and warm.”</blockquote><cite>5-star client review</cite></figure>
-      <figure class="card rev"><span class="stars">★★★★★</span><blockquote>“She listened carefully to what we wanted, gave great suggestions, and the final look turned out even better than we expected.”</blockquote><cite>5-star client review</cite></figure>
+      <figure class="card rev feature"><span class="stars" aria-hidden="true">★★★★★</span><blockquote>“I’ve seen Tommy for over a year now and he’s excellent. He does a great job with both cut and colour, charges very reasonable rates, and is always punctual, friendly, and kind. Best barbershop in town!!”</blockquote><cite>5-star Google review · about a month ago</cite></figure>
+      <figure class="card rev"><span class="stars" aria-hidden="true">★★★★★</span><blockquote>“This is the most beautiful haircut I’ve had in my whole life! If I come back to Vancouver, I will definitely return.”</blockquote><cite>5-star Google review</cite></figure>
+      <figure class="card rev feature"><span class="stars" aria-hidden="true">★★★★★</span><blockquote>“A clean and convenient place to get your hair trimmed, coloured or cut. The staff is friendly and warm. Tommy is fun and friendly, and you never feel rushed — he takes his time to make sure you are happy with your hair.”</blockquote><cite>5-star Google review · 10 months ago</cite></figure>
+      <figure class="card rev"><span class="stars" aria-hidden="true">★★★★★</span><blockquote>“He cut my husband’s hair and waxed his back and chest — it looked great. My friends get colour and cuts with him too.”</blockquote><cite>5-star Google review</cite></figure>
     </div>
+    <p class="quiet">Customers also mention Luciano’s attention to detail and the relaxed, welcoming vibe. <a href="https://maps.app.goo.gl/JgfpihckizhnzoSq7" target="_blank" rel="noopener">Read all reviews on Google →</a></p>
   </div>
 </section>
 
