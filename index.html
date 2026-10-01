@@ -8,7 +8,7 @@
 <meta property="og:title" content="Shiny Barbershop · Downtown Vancouver">
 <meta property="og:description" content="Precision cuts, colour and grooming at 678 Dunsmuir St. Rated 4.8 on Google.">
 <meta property="og:image" content="assets/barber-at-work.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"HairSalon","name":"Shiny Barbershop","telephone":"+1-604-616-5859","address":{"@type":"PostalAddress","streetAddress":"678 Dunsmuir St","addressLocality":"Vancouver","addressRegion":"BC","postalCode":"V7Y 1K8","addressCountry":"CA"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"985"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HairSalon","name":"Shiny Barbershop","telephone":"+1-604-616-5859","address":{"@type":"PostalAddress","streetAddress":"678 Dunsmuir St","addressLocality":"Vancouver","addressRegion":"BC","postalCode":"V7Y 1K8","addressCountry":"CA"},"openingHours":"Mo-Su 10:00-20:00","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"985"}}</script>
 <title>Shiny Barbershop · Downtown Vancouver · 678 Dunsmuir St</title>
 <meta name="description" content="Shiny Barbershop, rated 4.8 on Google from 985 reviews. 678 Dunsmuir St, Downtown Vancouver. Call 604-616-5859.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -95,9 +95,9 @@ footer a{color:var(--gold)}
 @media(min-width:760px){.nav ul{display:flex}}
 /* hero split */
 .hero .wrap{display:grid;gap:36px;align-items:end}
-.hero-photo{display:none;margin:0;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 60px -30px #000;aspect-ratio:3/4;max-height:560px}
-.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block;transform:scale(1.04)}
-@media(min-width:860px){.hero .wrap{grid-template-columns:1.35fr .65fr}.hero-photo{display:block}}
+.hero-photo{display:block;margin:0;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 60px -30px #000;aspect-ratio:16/10;max-height:560px}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 25%;display:block;transform:scale(1.04)}
+@media(min-width:860px){.hero .wrap{grid-template-columns:1.35fr .65fr}.hero-photo{aspect-ratio:3/4}}
 .hero-cred{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:22px;color:var(--muted);font-size:14px;list-style:none}
 .hero-cred li:before{content:"\2713";color:var(--gold);margin-right:7px;font-weight:700}
 /* highlights */
@@ -121,6 +121,13 @@ footer a{color:var(--gold)}
 .gallery img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
 .gallery figure:hover img{transform:scale(1.04)}
 .gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 12px 10px;font-size:12.5px;letter-spacing:.06em;color:var(--cream);background:linear-gradient(transparent,rgba(0,0,0,.75))}
+/* hours list */
+.hrs{list-style:none;width:100%;max-width:420px;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:linear-gradient(180deg,var(--card),var(--ink2))}
+.hrs li{display:flex;justify-content:space-between;padding:11px 18px;font-size:15px;color:var(--muted)}
+.hrs li+li{border-top:1px solid var(--line)}
+.hrs li.today{color:var(--cream);background:rgba(212,175,106,.1);font-weight:600}
+.badge{display:inline-block;vertical-align:middle;margin-left:10px;padding:4px 12px;border-radius:999px;font:600 12px/1.4 Inter,sans-serif;letter-spacing:.08em;text-transform:uppercase;background:rgba(80,180,110,.15);color:#7fd69a;border:1px solid rgba(80,180,110,.35)}
+.badge.closed{background:rgba(200,90,70,.15);color:#f0998a;border-color:rgba(200,90,70,.35)}
 /* review extras */
 .rev.feature{grid-column:1/-1}
 @media(min-width:760px){.rev.feature{grid-column:span 2}}
@@ -206,7 +213,6 @@ footer a{color:var(--gold)}
       <figure><img src="assets/blue-twists.png" alt="Electric blue twists styled up over a tapered fade" loading="lazy" width="366" height="453"><figcaption>Colour twists &amp; fade</figcaption></figure>
       <figure><img src="assets/blonde-crop.png" alt="Short layered crop with blonde and ash highlights" loading="lazy" width="367" height="365"><figcaption>Blonde crop</figcaption></figure>
     </div>
-    <p class="note">Sample styles shown for this preview.</p>
   </div>
 </section>
 
@@ -227,8 +233,17 @@ footer a{color:var(--gold)}
 <section id="hours">
   <div class="wrap hours">
     <span class="eyebrow">Hours</span>
-    <h2 class="t">Call for today’s hours</h2>
-    <p style="color:var(--muted)">Give us a ring before you head over. We’ll let you know when the next chair is free.</p>
+    <h2 class="t">Open daily, 10am to 8pm <span id="openNow" class="badge" hidden></span></h2>
+    <ul class="hrs" id="hrs">
+      <li data-d="1"><span>Monday</span><span>10am to 8pm</span></li>
+      <li data-d="2"><span>Tuesday</span><span>10am to 8pm</span></li>
+      <li data-d="3"><span>Wednesday</span><span>10am to 8pm</span></li>
+      <li data-d="4"><span>Thursday</span><span>10am to 8pm</span></li>
+      <li data-d="5"><span>Friday</span><span>10am to 8pm</span></li>
+      <li data-d="6"><span>Saturday</span><span>10am to 8pm</span></li>
+      <li data-d="0"><span>Sunday</span><span>10am to 8pm</span></li>
+    </ul>
+    <p style="color:var(--muted)">Call ahead and we’ll let you know when the next chair is free.</p>
     <a class="btn btn-call" style="padding:0 26px" href="tel:6046165859">Call 604-616-5859</a>
   </div>
 </section>
@@ -258,5 +273,6 @@ footer a{color:var(--gold)}
   <a class="btn btn-dir" href="https://www.google.com/maps/search/?api=1&amp;query=Shiny%20Barbershop%2C%20678%20Dunsmuir%20St%2C%20Vancouver%2C%20BC&amp;query_place_id=ChIJ14FMAoFxhlQRZEQUZlg1-1o" target="_blank" rel="noopener">Directions</a>
 </div>
 <script>(function(){var s=document.querySelector('.sticky'),h=document.querySelector('.hero');new IntersectionObserver(function(e){s.classList.toggle('on',!e[0].isIntersecting)},{threshold:.15}).observe(h)})();</script>
+<script>(function(){try{var f=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Vancouver',weekday:'short',hour:'numeric',hour12:false}).formatToParts(new Date()),w,h;f.forEach(function(p){if(p.type==='weekday')w=p.value;if(p.type==='hour')h=+p.value%24});var d={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}[w],li=document.querySelector('#hrs [data-d="'+d+'"]'),b=document.getElementById('openNow');if(li)li.classList.add('today');if(b){var o=h>=10&&h<20;b.textContent=o?'Open now':'Closed now';b.className='badge'+(o?'':' closed');b.hidden=false}}catch(e){}})();</script>
 </body>
 </html>
